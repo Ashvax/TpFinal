@@ -1,0 +1,2 @@
+cuartelbomberos.Vistas.Cuartel_view
+cuartelbomberos.Vistas.Cuartel_view$1
