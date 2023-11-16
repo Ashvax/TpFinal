@@ -63,6 +63,11 @@ public class Brigadas_view extends javax.swing.JFrame {
         jrAsginada.setText("Asignada");
 
         jSalir.setText("Salir");
+        jSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,6 +122,10 @@ public class Brigadas_view extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jSalirActionPerformed
 
     /**
      * @param args the command line arguments

@@ -55,6 +55,11 @@ public class Reportar_emergencias_view extends javax.swing.JFrame {
 
         jSalir.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         jSalir.setText("Salir");
+        jSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalirActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel3.setText("Coordenadas X:");
@@ -133,6 +138,10 @@ public class Reportar_emergencias_view extends javax.swing.JFrame {
     private void jReportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReportarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jReportarActionPerformed
+
+    private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jSalirActionPerformed
 
     /**
      * @param args the command line arguments

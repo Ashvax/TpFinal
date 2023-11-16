@@ -127,6 +127,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Reportar Emergencia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jReportarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jSalir">
       <Properties>
@@ -135,6 +138,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jSalirActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>

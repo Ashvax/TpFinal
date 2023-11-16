@@ -26,36 +26,81 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorioMain = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jInfoCuartel = new javax.swing.JMenu();
+        jItemCuartel = new javax.swing.JMenuItem();
         jBomBrigadas = new javax.swing.JMenu();
+        jItemBrigradas = new javax.swing.JMenuItem();
         jEmergenciasAct = new javax.swing.JMenu();
+        jItemEmerAct = new javax.swing.JMenuItem();
         jEmergenciasPas = new javax.swing.JMenu();
+        jItemEmerRes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout escritorioMainLayout = new javax.swing.GroupLayout(escritorioMain);
+        escritorioMain.setLayout(escritorioMainLayout);
+        escritorioMainLayout.setHorizontalGroup(
+            escritorioMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 513, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        escritorioMainLayout.setVerticalGroup(
+            escritorioMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 429, Short.MAX_VALUE)
         );
 
         jInfoCuartel.setText("Cuartel");
+        jInfoCuartel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jInfoCuartelActionPerformed(evt);
+            }
+        });
+
+        jItemCuartel.setText("Info Cuartel");
+        jItemCuartel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jItemCuartelActionPerformed(evt);
+            }
+        });
+        jInfoCuartel.add(jItemCuartel);
+
         jMenuBar1.add(jInfoCuartel);
 
         jBomBrigadas.setText("Brigadas");
+
+        jItemBrigradas.setText("Ver Brigadas");
+        jItemBrigradas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jItemBrigradasActionPerformed(evt);
+            }
+        });
+        jBomBrigadas.add(jItemBrigradas);
+
         jMenuBar1.add(jBomBrigadas);
 
         jEmergenciasAct.setText("Emergencias Actuales");
+
+        jItemEmerAct.setText("Ver Emergencias");
+        jItemEmerAct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jItemEmerActActionPerformed(evt);
+            }
+        });
+        jEmergenciasAct.add(jItemEmerAct);
+
         jMenuBar1.add(jEmergenciasAct);
 
         jEmergenciasPas.setText("Emergencias Resueltas");
+
+        jItemEmerRes.setText("Ver Emergencias Resueltas");
+        jItemEmerRes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jItemEmerResActionPerformed(evt);
+            }
+        });
+        jEmergenciasPas.add(jItemEmerRes);
+
         jMenuBar1.add(jEmergenciasPas);
 
         setJMenuBar(jMenuBar1);
@@ -64,15 +109,51 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorioMain)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorioMain)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jInfoCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInfoCuartelActionPerformed
+        
+    }//GEN-LAST:event_jInfoCuartelActionPerformed
+
+    private void jItemCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemCuartelActionPerformed
+        escritorioMain.removeAll();
+        escritorioMain.repaint();
+        Cuartel_view cuartelView = new Cuartel_view();
+        cuartelView.setVisible(true);
+        escritorioMain.add(cuartelView);
+    }//GEN-LAST:event_jItemCuartelActionPerformed
+
+    private void jItemBrigradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemBrigradasActionPerformed
+        escritorioMain.removeAll();
+        escritorioMain.repaint();
+        Brigadas_view brigadaView = new Brigadas_view();
+        brigadaView.setVisible(true);
+        escritorioMain.add(brigadaView);
+    }//GEN-LAST:event_jItemBrigradasActionPerformed
+
+    private void jItemEmerActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemEmerActActionPerformed
+        escritorioMain.removeAll();
+        escritorioMain.repaint();
+        Emergencias_actuales_view emeractView = new Emergencias_actuales_view();
+        emeractView.setVisible(true);
+        escritorioMain.add(emeractView);
+    }//GEN-LAST:event_jItemEmerActActionPerformed
+
+    private void jItemEmerResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemEmerResActionPerformed
+        escritorioMain.removeAll();
+        escritorioMain.repaint();
+        Emergencias_resueltas_view emerresView = new Emergencias_resueltas_view();
+        emerresView.setVisible(true);
+        escritorioMain.add(emerresView);
+    }//GEN-LAST:event_jItemEmerResActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,11 +191,15 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane escritorioMain;
     private javax.swing.JMenu jBomBrigadas;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jEmergenciasAct;
     private javax.swing.JMenu jEmergenciasPas;
     private javax.swing.JMenu jInfoCuartel;
+    private javax.swing.JMenuItem jItemBrigradas;
+    private javax.swing.JMenuItem jItemCuartel;
+    private javax.swing.JMenuItem jItemEmerAct;
+    private javax.swing.JMenuItem jItemEmerRes;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

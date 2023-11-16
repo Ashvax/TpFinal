@@ -51,9 +51,19 @@ public class Cuartel_view extends javax.swing.JFrame {
 
         jReportar.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         jReportar.setText("Reportar Emergencia");
+        jReportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jReportarActionPerformed(evt);
+            }
+        });
 
         jSalir.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         jSalir.setText("Salir");
+        jSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalirActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Posiblemente mas info");
 
@@ -113,6 +123,16 @@ public class Cuartel_view extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jSalirActionPerformed
+
+    private void jReportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jReportarActionPerformed
+        Reportar_emergencias_view reporteView = new Reportar_emergencias_view();
+        reporteView.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jReportarActionPerformed
 
     /**
      * @param args the command line arguments
