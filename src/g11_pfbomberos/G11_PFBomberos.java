@@ -15,7 +15,7 @@ import java.util.Date;
 public class G11_PFBomberos {
 
     public static void main(String[] args) {
-              
+    /*          
     CuartelData cuartelData = new CuartelData();
 
     Cuartel nuevoCuartel = new Cuartel();
@@ -27,12 +27,12 @@ public class G11_PFBomberos {
     nuevoCuartel.setCorreo("correo@prueba.com");
     cuartelData.guardarCuartel(nuevoCuartel);
         
-    /*BrigadaData brigadaData = new BrigadaData();
+    BrigadaData brigadaData = new BrigadaData();
 
     Brigada nuevaBrigada = new Brigada("Brigada de Rescates", "Especialidad de Rescates", true, 1);
-    brigadaData.guardarBrigada(nuevaBrigada);*/
+    brigadaData.guardarBrigada(nuevaBrigada);
 
-        /* Bombero bombero = new Bombero();
+        /*Bombero bombero = new Bombero();
         bombero.setDni("41348369");
         bombero.setNombreApellido("Francisco Torrez");
         bombero.setFechaNacimiento(new Date(System.currentTimeMillis()));

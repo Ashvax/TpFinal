@@ -20,8 +20,7 @@ public class BrigadaData {
     }
 
     public void guardarBrigada(Brigada brigada) {
-        String sql = "INSERT INTO brigada (nombre_br, especialidad, libre, nro_cuartel) VALUES (?, ?, ?, ?)";
-        
+        String sql = "INSERT INTO brigada (brigadaName, especialidad, libre, nro_cuartel) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, brigada.getNombreBr());
@@ -48,7 +47,7 @@ public class BrigadaData {
 
             while (rs.next()) {
                 int codBrigada = rs.getInt("codBrigada");
-                String nombreBrigada = rs.getString("nombre_br");
+                String nombreBrigada = rs.getString("brigadaName");
                 String especialidad = rs.getString("especialidad");
                 boolean libre = rs.getBoolean("libre");
                 int nroCuartel = rs.getInt("nro_cuartel");
@@ -94,7 +93,7 @@ public class BrigadaData {
 
 public Brigada buscarPorNombreBrigada(String nombreBrigada) {
     Brigada brigada = null;
-    String sql = "SELECT * FROM brigada WHERE nombre_br = ?";
+    String sql = "SELECT * FROM brigada WHERE brigadaName = ?";
 
     try {
         PreparedStatement ps = con.prepareStatement(sql);
