@@ -1,0 +1,5 @@
+bomberosApp.Vistas.RevisarBrigadasView
+bomberosApp.Vistas.RevisarBrigadasView$1
+bomberosApp.Vistas.RevisarBrigadasView$2
+bomberosApp.Vistas.RevisarBrigadasView$3
+bomberosApp.Vistas.RevisarBrigadasView$4
