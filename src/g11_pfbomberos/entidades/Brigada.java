@@ -3,7 +3,7 @@ package g11_pfbomberos.entidades;
 
 public class Brigada {
     private int codBrigada;
-    private String nombreBr;
+    private String brigadaName;
     private String especialidad;
     private boolean libre;
     private int nroCuartel;
@@ -11,8 +11,8 @@ public class Brigada {
     public Brigada() {
     }
 
-    public Brigada(String nombreBr, String especialidad, boolean libre, int nroCuartel) {
-        this.nombreBr = nombreBr;
+    public Brigada(String brigadaName, String especialidad, boolean libre, int nroCuartel) {
+        this.brigadaName = brigadaName;
         this.especialidad = especialidad;
         this.libre = libre;
         this.nroCuartel = nroCuartel;
@@ -20,7 +20,7 @@ public class Brigada {
 
     public Brigada(int codBrigada, String nombreBr, String especialidad, boolean libre, int nroCuartel) {
         this.codBrigada = codBrigada;
-        this.nombreBr = nombreBr;
+        this.brigadaName = brigadaName;
         this.especialidad = especialidad;
         this.libre = libre;
         this.nroCuartel = nroCuartel;
@@ -35,11 +35,11 @@ public class Brigada {
     }
 
     public String getNombreBr() {
-        return nombreBr;
+        return brigadaName;
     }
 
     public void setNombreBr(String nombreBr) {
-        this.nombreBr = nombreBr;
+        this.brigadaName = brigadaName;
     }
 
     public String getEspecialidad() {
@@ -68,6 +68,6 @@ public class Brigada {
 
     @Override
     public String toString() {
-        return "Brigada{" + "codBrigada=" + codBrigada + ", nombreBr=" + nombreBr + ", especialidad=" + especialidad + ", libre=" + libre + ", nroCuartel=" + nroCuartel + '}';
+        return "Brigada{" + "codBrigada=" + codBrigada + ", nombreBr=" + brigadaName + ", especialidad=" + especialidad + ", libre=" + libre + ", nroCuartel=" + nroCuartel + '}';
     }   
 }
