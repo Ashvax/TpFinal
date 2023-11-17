@@ -1,2 +1,0 @@
-cuartelbomberos.Vistas.Brigadas_view$1
-cuartelbomberos.Vistas.Brigadas_view
