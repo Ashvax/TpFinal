@@ -31,6 +31,7 @@ public class Main extends javax.swing.JFrame {
         jInfoCuartel = new javax.swing.JMenu();
         jItemCuartel = new javax.swing.JMenuItem();
         jBomBrigadas = new javax.swing.JMenu();
+        jMguardarBrig = new javax.swing.JMenuItem();
         jItemBrigradas = new javax.swing.JMenuItem();
         jEmergenciasAct = new javax.swing.JMenu();
         jItemEmerAct = new javax.swing.JMenuItem();
@@ -68,6 +69,14 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1.add(jInfoCuartel);
 
         jBomBrigadas.setText("Brigadas");
+
+        jMguardarBrig.setText("Guardar Brigada");
+        jMguardarBrig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMguardarBrigActionPerformed(evt);
+            }
+        });
+        jBomBrigadas.add(jMguardarBrig);
 
         jItemBrigradas.setText("Ver Brigadas");
         jItemBrigradas.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +143,7 @@ public class Main extends javax.swing.JFrame {
     private void jItemBrigradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemBrigradasActionPerformed
         escritorioMain.removeAll();
         escritorioMain.repaint();
-        Brigadas_view brigadaView = new Brigadas_view();
+        MostrarBrigada brigadaView = new MostrarBrigada();
         brigadaView.setVisible(true);
         escritorioMain.add(brigadaView);
     }//GEN-LAST:event_jItemBrigradasActionPerformed
@@ -154,6 +163,14 @@ public class Main extends javax.swing.JFrame {
         emerresView.setVisible(true);
         escritorioMain.add(emerresView);
     }//GEN-LAST:event_jItemEmerResActionPerformed
+
+    private void jMguardarBrigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMguardarBrigActionPerformed
+       escritorioMain.removeAll();
+        escritorioMain.repaint();
+        GuardarBrigada modificarView = new GuardarBrigada();
+        modificarView.setVisible(true);
+        escritorioMain.add(modificarView);
+    }//GEN-LAST:event_jMguardarBrigActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,5 +218,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jItemEmerAct;
     private javax.swing.JMenuItem jItemEmerRes;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMguardarBrig;
     // End of variables declaration//GEN-END:variables
 }

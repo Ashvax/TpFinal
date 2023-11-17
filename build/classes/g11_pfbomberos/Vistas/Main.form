@@ -27,6 +27,14 @@
             <Property name="text" type="java.lang.String" value="Brigadas"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMguardarBrig">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar Brigada"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMguardarBrigActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jItemBrigradas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Brigadas"/>

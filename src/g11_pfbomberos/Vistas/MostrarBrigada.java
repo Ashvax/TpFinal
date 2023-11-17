@@ -4,22 +4,28 @@ package g11_pfbomberos.Vistas;
 import g11_pfbomberos.entidades.*;
 import g11_pfbomberos.AccesoADatos.*;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
 
-public class Brigadas_view extends javax.swing.JFrame {
+public class MostrarBrigada extends javax.swing.JFrame {
 
     private ArrayList<Brigada> listabrig;
     
     private BrigadaData brig;
     
+    private DefaultTableModel modelo;
     
-    public Brigadas_view() {
+    
+    public MostrarBrigada() {
         initComponents();
         
         brig = new BrigadaData();
         listabrig = brig.listarBrigadas();
+        modelo = new DefaultTableModel();
         
         cargarBrigada();
+        armarCabeceraTabla();
     }
    
 
@@ -33,15 +39,13 @@ public class Brigadas_view extends javax.swing.JFrame {
         jcSelecBrigada = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jrAsginada = new javax.swing.JRadioButton();
         jSalir = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel1.setText("Brigadas");
+        jLabel1.setText("Brigadas Disponibles");
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         jLabel2.setText("Seleccione una brigada");
@@ -60,15 +64,25 @@ public class Brigadas_view extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre y Apellido", "DNI", "Fecha de Nacimiento", "Celular"
+                "Código Brigada", "Nombre Brigada", "Especialidad", "Libre", "N° Cuartel"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
-
-        jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel3.setText("Estado de la brigada");
-
-        jrAsginada.setText("Asignada");
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         jSalir.setText("Salir");
         jSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -81,29 +95,27 @@ public class Brigadas_view extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(454, 454, 454)
+                .addComponent(jSeparator1))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jcSelecBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcSelecBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jrAsginada, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(299, 299, 299)
-                                .addComponent(jSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 120, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(jLabel1)
+                        .addGap(277, 277, 277)
+                        .addComponent(jSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -115,17 +127,13 @@ public class Brigadas_view extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
                     .addComponent(jcSelecBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jrAsginada, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(jSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
@@ -156,21 +164,23 @@ public class Brigadas_view extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Brigadas_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarBrigada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Brigadas_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarBrigada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Brigadas_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarBrigada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Brigadas_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarBrigada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Brigadas_view().setVisible(true);
+                new MostrarBrigada().setVisible(true);
             }
         });
     }
@@ -178,17 +188,37 @@ public class Brigadas_view extends javax.swing.JFrame {
 
     for (Brigada item : listabrig) {
         jcSelecBrigada.addItem(item);
+    }       
     }
-}
+    public void armarCabeceraTabla(){
+        ArrayList <Object> filaCabecera = new ArrayList();
+        filaCabecera.add("ID");
+        filaCabecera.add("Nombre");
+        filaCabecera.add("Especialidad");
+        filaCabecera.add("Estado");
+        for (Object object : filaCabecera) {
+            modelo.addColumn(object);
+        }
+        jTable1.setModel(modelo);                   
+    }
+    public void borrarFilaTablas(){
+        int indice = modelo.getRowCount() -1;
+        
+        for(int i = indice; i >= 0; i--){
+            modelo.removeRow(i);
+        }
+    }
+    public void cargarDatosTabla(){
+        Brigada selec = (Brigada)jcSelecBrigada.getSelectedItem();
+        //List <Bombero> lista = brig.listarBrigadas(selec.getCodBrigada());
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JComboBox<String> jcSelecBrigada;
-    private javax.swing.JRadioButton jrAsginada;
+    private javax.swing.JComboBox<Brigada> jcSelecBrigada;
     // End of variables declaration//GEN-END:variables
 }
