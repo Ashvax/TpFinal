@@ -167,7 +167,7 @@ public class Emergencias_actuales_view extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cargaEmerAsig(){
-    List <Siniestro> lista = SiniestroData.siniestros;
+    List <Siniestro> lista;
     
     }
     private void armarCabeceraTabla(){
